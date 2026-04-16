@@ -6,6 +6,7 @@ export const inquiryFormValidator = z.object({
     code: z.string().min(2, "Please select a country code").max(2),
     number: z.string().min(6, "Please enter a valid phone number"),
   }),
+  email: z.email("Please enter a valid email address"),
   company: z.object({
     name: z.string().min(2, "Company Name too short"),
     size: z.union([
@@ -57,6 +58,7 @@ export const inquiryFormValidator = z.object({
 
 export const inquiryDefualtValues: z.infer<typeof inquiryFormValidator> = {
   name: "",
+  email: "",
   phoneNumber: {
     code: "",
     number: "",
