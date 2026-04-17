@@ -49,7 +49,15 @@ export default function InquiryForm() {
       onBlur: inquiryFormValidator,
     },
     onSubmit: async ({ value }) => {
-      console.log(value);
+      const res = await fetch("/api/v1/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(value),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to submit inquiry. Please try again.");
+      }
     },
   });
 

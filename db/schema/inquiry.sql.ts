@@ -10,4 +10,7 @@ export const inquiryTable = s.pgTable("inquiries", {
   targetAudience: s.jsonb("target_audience"),
   estimatedBudget: s.text("estimated_budget"),
   projectTimeline: s.text("project_timeline"),
+
+  createdAt: s.timestamp("created_at").defaultNow().notNull(),
+  archivedAt: s.timestamp("archived_at"),
 });

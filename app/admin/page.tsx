@@ -10,6 +10,7 @@ export default async function AdminDashboardPage() {
   const [session, statsResult] = await Promise.all([
     auth.api.getSession({ headers: await headers() }),
     db.execute<UserStats>(
+      // @ts-expect-error - Drizzle's SQL templates
       sql`SELECT
         count(*)::int                                             AS total,
         count(*) FILTER (WHERE role = 'admin')::int              AS admins,

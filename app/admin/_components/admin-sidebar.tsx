@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { authClient } from "@/utils/auth-client";
 import {
+  IconInbox,
   IconLayoutDashboard,
   IconLogout,
   IconUsers,
@@ -13,6 +14,7 @@ import { usePathname, useRouter } from "next/navigation";
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: IconLayoutDashboard },
   { href: "/admin/users", label: "Users", icon: IconUsers },
+  { href: "/admin/inquiries", label: "Inquiries", icon: IconInbox },
 ];
 
 export default function AdminSidebar() {
