@@ -18,7 +18,11 @@ export default function LenisProvider({ children }: PropsWithChildren) {
   }, []);
 
   return (
-    <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
+    <ReactLenis
+      root
+      options={{ autoRaf: false, autoResize: true }}
+      ref={lenisRef}
+    >
       {children}
     </ReactLenis>
   );

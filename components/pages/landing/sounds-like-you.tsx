@@ -107,7 +107,7 @@ function Card({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 mt-2 md:mt-16 mx-3 md:mx-0",
+        "grid grid-cols-1 md:grid-cols-2 mt-2 md:mt-16 mx-3 md:mx-0",
         className,
       )}
     >
