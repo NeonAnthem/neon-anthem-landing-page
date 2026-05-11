@@ -14,20 +14,19 @@ const NAVMENUS: INavbarItems[] = [
         children: [
           {
             label: "High-Converting Landing Page",
-            description: "Pages that convert for more demos",
+            description: "Pages engineered to convert paid traffic into demos.",
             href: "/services/landing-page",
           },
           {
             label: "B2B Website Revamp",
             href: "/services/website-revamp",
-            description:
-              "Build or revamp your existing Saas or solution for future market positioning",
+            description: "Faster, modern rebuild of your existing B2B site.",
           },
           {
             label: "Custom Solutions",
             href: "/services/custom-enterprise-solutions",
             description:
-              "Custom software solutions to streamline & optimize your organization",
+              "Bespoke software built around your org's exact workflow.",
           },
         ],
         banner: {
@@ -50,22 +49,30 @@ const NAVMENUS: INavbarItems[] = [
           {
             label: "Conversion Rate Optimization",
             href: "/services/go-to-market/conversion-rate-optimization",
+            description:
+              "Stop losing qualified traffic. More demos, same ad spend.",
           },
           {
             label: "Google Business Profile",
             href: "/services/go-to-market/google-business-profile",
+            description: "Show up first when buyers search your category.",
           },
           {
             label: "SEO • AEO",
             href: "/services/go-to-market/seo-aeo",
+            description: "Rank on Google. Get cited by ChatGPT. Both.",
           },
           {
             label: "Social Strategy",
             href: "/services/go-to-market/social-strategy",
+            description:
+              "LinkedIn content that drives inbound, not just impressions.",
           },
           {
             label: "Market Intelligence Report",
             href: "/services/go-to-market/market-intelligence-report",
+            description:
+              "ICP signals, competitor gaps, and whitespace — clearly mapped.",
           },
         ],
       },
@@ -93,14 +100,20 @@ const NAVMENUS: INavbarItems[] = [
           {
             label: "System Design",
             href: "/solutions/system-design",
+            description:
+              "Architecture that scales before your growth demands it.",
           },
           {
             label: "Database Architectures",
             href: "/solutions/database-architectures",
+            description:
+              "Structured for speed, reliability, and zero data debt.",
           },
           {
             label: "Workflow Automation",
             href: "/solutions/workflow-automation",
+            description:
+              "Cut manual ops. Ship faster with automated pipelines.",
           },
         ],
         banner: {
@@ -120,22 +133,31 @@ const NAVMENUS: INavbarItems[] = [
           {
             label: "Inventory Management",
             href: "/solutions/inventory-mangement",
+            description:
+              "Real-time stock visibility across every location and SKU.",
           },
           {
             label: "CRM",
             href: "/solutions/crm",
+            description:
+              "Pipeline clarity built for how your sales team works.",
           },
           {
             label: "Field Service",
             href: "/solutions/field-service",
+            description: "Dispatch, track, and close jobs from one platform.",
           },
           {
             label: "Custom E-Commerce Store",
             href: "/solutions/custom-e-commerce-store",
+            description:
+              "Headless storefronts built to convert and scale fast.",
           },
           {
             label: "Bookings tracking & management",
             href: "/solutions/bookings-tracking-&-management",
+            description:
+              "End-to-end booking ops, from scheduling to completion.",
           },
         ],
         cta: { label: "Explore Enterprise Solutions" },
@@ -165,22 +187,24 @@ const NAVMENUS: INavbarItems[] = [
             label: "SaaS",
             href: "/industries/saas",
             description:
-              "We help you with tight deadlines, product market fit, UX Analytics and more...",
+              "High-converting pages built for PLG and demo-led funnels.",
           },
           {
             label: "B2B Legacy Enterprise",
             href: "/industries/legacy-b2b",
             description:
-              "Integrate AI Agents, Capture new markets, Scalable architecture and more...",
+              "Modernize aging stacks and capture markets you're missing.",
           },
           {
             label: "FinTech",
-            description: "Find finance relevant clients",
+            description:
+              "Compliant, conversion-optimized pages for regulated finance products.",
             href: "industries/fintech",
           },
           {
             label: "Manufacturing",
-            description: "Streamline your production with custom solutions",
+            description:
+              "Digital presence built for long-cycle, high-ticket B2B deals.",
             href: "/industires/manufacturing",
           },
         ],
@@ -196,22 +220,23 @@ const NAVMENUS: INavbarItems[] = [
             label: "Manufacturing",
             href: "/industries/manufacturing",
             description:
-              "We help you with tight deadlines, product market fit, UX Analytics and more...",
+              "ERP integrations and custom tooling built for the floor.",
           },
           {
             label: "Assets & Rentals",
             href: "/industries/legacy-b2b",
             description:
-              "Integrate AI Agents, Capture new markets, Scalable architecture and more...",
+              "Track, manage, and monetize every asset in your fleet.",
           },
           {
             label: "Service Bookings & Field Operations",
-            description: "Find finance relevant clients",
+            description:
+              "Field ops software built for dispatch-heavy service businesses.",
             href: "industries/fintech",
           },
           {
-            label: "Manufacturing",
-            description: "Streamline your production with custom solutions",
+            label: "Real Estate",
+            description: "Track materials, scrap & labor.",
             href: "/industires/manufacturing",
           },
         ],

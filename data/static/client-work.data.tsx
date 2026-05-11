@@ -20,7 +20,7 @@ const CLIENTWORKDATA: IClientWork[] = [
   {
     primaryImage: {
       src: "/assets/showcase/verosha-1.png",
-      alt: "",
+      alt: "Hero section of Verosha's landing page",
     },
     secondaryImage: {
       src: "/assets/showcase/verosha-3.png",
@@ -42,7 +42,7 @@ const CLIENTWORKDATA: IClientWork[] = [
   {
     primaryImage: {
       src: "/assets/showcase/gudsman-1.png",
-      alt: "",
+      alt: "Hero section of Gudsman's landing page",
     },
     secondaryImage: {
       src: "/assets/showcase/gudsman-2.png",

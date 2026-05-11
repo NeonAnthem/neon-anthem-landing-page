@@ -6,9 +6,10 @@ import { cn } from "@/lib/utils";
 import { useNavbarStore } from "@/store/navbar-store";
 import { INavbarContent, INavbarContentList } from "@/types/navbar.type";
 import { IconArrowRight } from "@tabler/icons-react";
+import { useLenis } from "lenis/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo } from "react";
+import { useLayoutEffect, useMemo, useRef } from "react";
 import { NeonAnthemLogo } from "../vectors/logo";
 import { Button } from "./button";
 import {
@@ -39,7 +40,7 @@ export default function NavigationBar() {
     >
       <NavBar className="">
         <NavBrand>
-          <NeonAnthemLogo className="h-6! fill-black dark:fill-white" />
+          <NeonAnthemLogo className="max-sm:h-5! h-6! fill-black dark:fill-white" />
         </NavBrand>
 
         <NavGroup className="hidden sm:flex gap-2">
@@ -56,9 +57,31 @@ export default function NavigationBar() {
   );
 }
 
-function Navigation() {
+function NavOpenEffect() {
   const setIsDark = useNavbarStore((s) => s.setIsDark);
+  const setIsOpen = useNavbarStore((s) => s.setIsOpen);
+  const lenis = useLenis();
+  const lenisRef = useRef(lenis);
 
+  useLayoutEffect(() => {
+    lenisRef.current = lenis;
+  });
+
+  useLayoutEffect(() => {
+    setIsDark(true);
+    setIsOpen(true);
+    lenisRef.current?.stop();
+    return () => {
+      setIsDark(false);
+      setIsOpen(false);
+      lenisRef.current?.start();
+    };
+  }, [setIsDark, setIsOpen]);
+
+  return null;
+}
+
+function Navigation() {
   const orderedNavMenus = useMemo(() => {
     return sortByPosition(NAVMENUS);
   }, []);
@@ -70,7 +93,6 @@ function Navigation() {
         sideOffset={0}
         positionerClassName="!left-0 !w-screen !max-w-none duration-0!"
         popupClassName="!rounded-none !shadow-none !ring-0 duration-0!"
-        onValueChange={(value) => setIsDark(value !== null)}
       >
         <NavigationMenuList>
           {orderedNavMenus?.map((item) => {
@@ -85,9 +107,12 @@ function Navigation() {
                     {item.label}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent
-                    className={"w-screen bg-black h-[50vh] duration-0! "}
+                    className={
+                      "w-screen bg-black h-[50vh] duration-0! border-b border-b-border-foreground"
+                    }
                   >
-                    <div className="grid grid-rows-3 grid-cols-1 h-full w-full sm:grid-cols-3 sm:grid-rows-1 *:w-full *:h-full border-t border-[#2d2d2d] py-4 px-4 *:px-2 divide-x divide-[#2d2d2d] text-background">
+                    <NavOpenEffect />
+                    <div className="grid grid-rows-3 grid-cols-1 h-full w-full sm:grid-cols-3 sm:grid-rows-1 *:w-full *:h-full border-t border-foreground py-4 px-4 *:px-2 divide-x divide-[#2d2d2d] text-background">
                       {sortByPosition(item.child)?.map((child, index) => (
                         <NavbarItemContentBlock
                           {...child}
@@ -140,11 +165,13 @@ function NavbarItemContentBlock({ ...item }: INavbarContent) {
           )}
         </p>
         <div className="">
-          <h4 className="text-xl font-medium text-background/85 group-hover:text-background">
+          <h4 className="text-xl font-medium text-background/90 group-hover:text-background">
             {label}
           </h4>
           {description ? (
-            <p className="text-sm text-background/80">{description}</p>
+            <p className="text-sm font-medium text-background/40">
+              {description}
+            </p>
           ) : null}
         </div>
       </Link>
@@ -162,7 +189,7 @@ function NavbarItemContentBlock({ ...item }: INavbarContent) {
           <div>
             <div>
               {/* Heading Title */}
-              <div className="border-b border-[#2d2d2d] py-1">
+              <div className="border-b border-foreground py-1">
                 <h3 className="text-2xl font-body font-medium uppercase">
                   {item.heading}
                 </h3>

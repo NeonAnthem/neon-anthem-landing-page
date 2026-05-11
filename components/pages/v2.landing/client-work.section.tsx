@@ -31,11 +31,11 @@ export default function ClientWorkSection() {
 
 function WorkCard({ ...client }: IClientWork) {
   return (
-    <div className="h-fit">
+    <div className="h-fit w-full">
       {/* Content */}
-      <div className="grid max-md:grid-rows-[1fr_2fr] md:grid-cols-[5fr_4fr] gap-8 h-fit">
+      <div className="grid grid-cols-1 md:grid-cols-[5fr_4fr] gap-8 h-fit overflow-hidden">
         {/* Primary Showcase */}
-        <div className="h-full w-full">
+        <div className="w-full min-w-0 max-md:aspect-video md:h-full">
           <Image
             src={client.primaryImage.src}
             alt={client.primaryImage.alt}
@@ -86,18 +86,20 @@ function WorkSecondaryShowcase({
   tertiaryImage: IClientWork["tertiaryImage"];
 }) {
   return (
-    <div className="grid grid-cols-2 gap-8 w-fit">
+    <div className="grid grid-cols-2 gap-4 overflow-hidden">
       <Image
         src={secondaryImage.src}
         alt={secondaryImage.alt}
         width={600}
         height={600}
+        className="w-full h-auto"
       />
       <Image
         src={tertiaryImage.src}
         alt={tertiaryImage.alt}
         width={600}
         height={600}
+        className="w-full h-auto"
       />
     </div>
   );

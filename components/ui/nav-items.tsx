@@ -36,7 +36,7 @@ function NavBar({
   return (
     <div
       className={cn(
-        "flex items-center mx-auto justify-between fixed top-0 w-full h-12 z-100 px-12 transition-colors duration-300",
+        "flex items-center mx-auto justify-between fixed top-0 w-full h-12 z-100 px-4 md:px-12 transition-colors duration-300",
         isDark ? "bg-black text-white" : "",
         className,
       )}
