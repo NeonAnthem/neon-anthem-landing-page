@@ -37,7 +37,7 @@ export default function SectionTitle({
         </p>
         <h2
           className={cn(
-            "text-[20px] md:text-[36px] font-medium text-foreground",
+            "text-[20px] md:text-[36px] font-medium text-foreground font-heading",
             {
               "text-start": variant === "editorial",
             },

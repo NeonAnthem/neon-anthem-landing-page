@@ -33,7 +33,7 @@ function WorkCard({ ...client }: IClientWork) {
   return (
     <div className="h-fit w-full">
       {/* Content */}
-      <div className="grid grid-cols-1 md:grid-cols-[5fr_4fr] gap-8 h-fit overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-[5fr_4fr] gap-8 h-fit">
         {/* Primary Showcase */}
         <div className="w-full min-w-0 max-md:aspect-video md:h-full">
           <Image
@@ -86,20 +86,20 @@ function WorkSecondaryShowcase({
   tertiaryImage: IClientWork["tertiaryImage"];
 }) {
   return (
-    <div className="grid grid-cols-2 gap-4 overflow-hidden">
+    <div className="grid grid-cols-2 gap-4 *:w-full *:h-full *:object-cover">
       <Image
         src={secondaryImage.src}
         alt={secondaryImage.alt}
         width={600}
         height={600}
-        className="w-full h-auto"
+        className=""
       />
       <Image
         src={tertiaryImage.src}
         alt={tertiaryImage.alt}
         width={600}
         height={600}
-        className="w-full h-auto"
+        className=""
       />
     </div>
   );
@@ -113,14 +113,9 @@ function WorkClientContent({
   description: string;
 }) {
   return (
-    <div className="text-start max-sm:space-y-8">
-      {/* Client Information */}
-      <div className="">
-        {/* <h3 className="text-foreground text-3xl">{client.label}</h3> */}
-        <div className="*:h-14.5 *:w-max w-max mb-4">{logo}</div>
-        <p className="text-accent-foreground/60">{description}</p>
-      </div>
-      {/* End Client Information */}
+    <div className="text-start max-md:mb-6">
+      <div className="*:h-14.5 *:w-max! w-max mb-4">{logo}</div>
+      <p className="text-accent-foreground/60  text-wrap">{description}</p>
     </div>
   );
 }

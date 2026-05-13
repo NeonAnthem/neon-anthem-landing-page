@@ -1,43 +1,29 @@
 import { cn } from "@/lib/utils";
 import { IconArrowRight } from "@tabler/icons-react";
-import { cva, VariantProps } from "class-variance-authority";
+import { VariantProps } from "class-variance-authority";
 import { PropsWithChildren } from "react";
+import { Button, buttonVariants } from "./button";
 
 const DEFAULT_CTA_TEXT = "Talk to Us";
-
-const ctaButtonVariants = cva(
-  "flex items-center gap-2 [&>svg]:size-4 py-1 px-2 font-medium",
-  {
-    variants: {
-      variant: {
-        default: "bg-primary text-background",
-      },
-      mode: {
-        default: "rounded-xs",
-        rounded: "rounded-full px-3!",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-    },
-  },
-);
 
 function CTAButton({
   children,
   className,
-  mode,
   variant,
+  size,
 }: PropsWithChildren &
-  VariantProps<typeof ctaButtonVariants> & { className?: string }) {
+  VariantProps<typeof buttonVariants> & { className?: string }) {
   return (
-    <button className={cn("", ctaButtonVariants({ className, mode, variant }))}>
+    <Button
+      variant={variant}
+      size={size}
+      className={cn("gap-4 font-body font-medium", className)}
+    >
       {children ? children : DEFAULT_CTA_TEXT}
-
-      <span className="rounded-full p-1 bg-foreground">
-        <IconArrowRight className="size-4" />
+      <span className="bg-primary-foreground -m-1 -mr-1.5 p-1">
+        <IconArrowRight className="stroke-primary" />
       </span>
-    </button>
+    </Button>
   );
 }
 

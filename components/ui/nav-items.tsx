@@ -6,6 +6,7 @@ import {
   NavbarStoreProvider,
   useNavbarStore,
 } from "@/store/navbar-store";
+import Link from "next/link";
 import { PropsWithChildren } from "react";
 
 function NavbarProvider({
@@ -59,7 +60,9 @@ function NavGroup({
 
 function NavBrand({ children }: PropsWithChildren) {
   return (
-    <div className="flex items-center gap-2 text-foreground">{children}</div>
+    <div className="flex items-center gap-2 text-foreground">
+      <Link href={"/"}>{children}</Link>
+    </div>
   );
 }
 

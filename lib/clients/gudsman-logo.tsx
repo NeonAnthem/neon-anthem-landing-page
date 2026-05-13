@@ -4,10 +4,8 @@ export default function GudsmanLogo({ ...props }: HTMLAttributes<SVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1080"
-      height="232"
       fill="none"
-      viewBox="0 0 1080 232"
+      viewBox="0 0 1080 190"
       {...props}
     >
       <g clipPath="url(#clip0_32_2)">

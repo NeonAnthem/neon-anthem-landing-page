@@ -26,19 +26,19 @@ function GanttChartCard({
       )}
     >
       <div className="flex items-center justify-center bg-white w-8 shrink-0">
-        <span className="-rotate-90 whitespace-nowrap text-[10px] font-semibold text-black tracking-widest uppercase">
+        <span className="-rotate-90 whitespace-nowrap text-[10px] font-medium text-black tracking-widest uppercase">
           {label}
         </span>
       </div>
       <div className="flex flex-col justify-center px-6 py-4 gap-2 text-start">
-        <h3 className="text-xl md:text-2xl font-bold text-white leading-snug">
+        <h3 className="text-xl md:text-2xl font-medium text-white leading-snug">
           {title}
         </h3>
         <p className="flex items-baseline gap-2">
-          <span className="text-xl md:text-2xl font-bold text-white">
+          <span className="text-xl md:text-2xl font-medium text-white">
             {stat}
           </span>
-          <span className="text-xs md:text-sm text-white/60">
+          <span className="text-xs md:text-sm text-white/60 font-medium">
             {statDescription}
           </span>
         </p>
