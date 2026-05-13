@@ -1,7 +1,8 @@
-import { CTAButton } from "@/components/ui/cta.button";
+import { Button } from "@/components/ui/button";
 import { Marquee } from "@/components/ui/marquee";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { Section } from "@/components/ui/section";
+import { IconArrowRight } from "@tabler/icons-react";
 import Image from "next/image";
 
 export default function HeroV2() {
@@ -29,7 +30,7 @@ function Hero() {
         {/* End tagline */}
 
         {/* Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-4xl lg:text-6xl xl:text-7xl font-medium text-foreground">
+        <h1 className="text-4xl sm:text-5xl md:text-4xl lg:text-6xl xl:text-7xl font-medium text-foreground font-heading">
           We Engineer<br></br> High-Converting<br></br> Landing Pages.
         </h1>
         {/* end Heading */}
@@ -42,7 +43,9 @@ function Hero() {
 
         {/* CTA */}
         <div className="mt-4 sm:mt-17.5 w-max">
-          <CTAButton mode={"rounded"}>Get our free structural audit</CTAButton>
+          <Button className={"rounded-none"}>
+            Get our Free Structural Audit <IconArrowRight />
+          </Button>
         </div>
         {/* End CTA */}
       </div>
@@ -162,7 +165,7 @@ function HeroMetrics() {
         {metricList?.map((m, index) => {
           return (
             <div key={m.label + index} className="text-center">
-              <div className="text-6xl font-semibold text-nowrap text-accent-foreground">
+              <div className="text-6xl font-semibold font-heading text-nowrap text-accent-foreground">
                 {typeof m.value === "object" ? (
                   <span className="flex items-center gap-0.5 ">
                     {m.value.prefix && <p>{m.value.prefix}</p>}
@@ -178,7 +181,9 @@ function HeroMetrics() {
                 )}
               </div>
 
-              <p className="text-sm sm:text-base text-nowrap">{m.label}</p>
+              <p className="text-sm sm:text-base text-nowrap font-sans font-medium">
+                {m.label}
+              </p>
             </div>
           );
         })}

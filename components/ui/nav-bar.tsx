@@ -12,14 +12,7 @@ import Link from "next/link";
 import { useLayoutEffect, useMemo, useRef } from "react";
 import { NeonAnthemLogo } from "../vectors/logo";
 import { Button } from "./button";
-import {
-  Nav,
-  NavBar,
-  NavBrand,
-  NavContent,
-  NavCTA,
-  NavGroup,
-} from "./nav-items";
+import { Nav, NavBar, NavBrand, NavContent, NavGroup } from "./nav-items";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -46,10 +39,12 @@ export default function NavigationBar() {
         <NavGroup className="hidden sm:flex gap-2">
           <Navigation />
           <NavGroup className="gap-2">
-            <NavCTA className="">
-              Free 3-min Structural Audit
-              <IconArrowRight />
-            </NavCTA>
+            <Button className="gap-4 font-body font-medium text-base">
+              Talk to Us
+              <span className="bg-primary-foreground -m-1 -mr-1.5 p-1">
+                <IconArrowRight className="stroke-primary" />
+              </span>
+            </Button>
           </NavGroup>
         </NavGroup>
       </NavBar>
