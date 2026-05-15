@@ -10,7 +10,7 @@ export default function MoreSolutionsSection() {
         {/* Title */}
         <SectionTitle
           title="Not just design but infrastructure that scales."
-          description="No guesswork. No scope creep.<br>Every Step has a defined output.<br>A structured path from research to revenue."
+          description="Solution that go beyond designs.<br>Infrastructure solutions that scale.<br>Pipeline that goes beyond launch."
           variant={"editorial"}
         />
         {/* End Title */}

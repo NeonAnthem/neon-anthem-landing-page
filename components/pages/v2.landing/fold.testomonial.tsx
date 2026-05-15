@@ -46,9 +46,9 @@ function TestomonialCard() {
         {/* Quote */}
         <h5 className="text-xl">
           The team was thoughtful, responsive and has exceptional design
-          sensability.<br></br> Bringing our collective brand vision to life
-          wasn&apos;t easy, but the results<br></br> speak for themselves - it
-          looks amazing!
+          sensability.<br></br> Bringing our collective brand vision & goals to
+          life was difficult. The results<br></br> speak for themselves - it
+          looks amazing, love it!
         </h5>
 
         {/* Author */}

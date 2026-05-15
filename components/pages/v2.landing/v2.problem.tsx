@@ -23,15 +23,15 @@ function ProblemsComponent() {
       className="mt-8 md:mt-16 grid grid-cols-none sm:grid-cols-2 items-center place-items-center gap-y-8 "
       data-block="contain"
     >
-      <ProblemCard />
-      <ProblemCard />
-      <ProblemCard />
-      <ProblemCard />
+      <ProblemCard description="You've re-designed it twice" />
+      <ProblemCard description="Doubled your ad-spend" />
+      <ProblemCard description="Website looks amazing, but not converting" />
+      <ProblemCard description="Worked with multiple agencies" />
     </div>
   );
 }
 
-function ProblemCard() {
+function ProblemCard({ description }: { description?: string }) {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   return (
@@ -50,12 +50,12 @@ function ProblemCard() {
         animate={isHovered ? "animate" : "default"}
       />
       <div
-        className="border w-max"
+        className="border max-w-70.75 min-w-70"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="p-8">
-          <p>You&apos;ve redesigned it twice</p>
+          <p>{description || "You&apos;ve redesigned it twice"}</p>
         </div>
       </div>
     </div>
