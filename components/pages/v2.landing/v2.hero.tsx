@@ -1,11 +1,16 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Marquee } from "@/components/ui/marquee";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { Section } from "@/components/ui/section";
 import { IconArrowRight } from "@tabler/icons-react";
 import Image from "next/image";
+import posthog from "posthog-js";
 
 export default function HeroV2() {
+  posthog.capture("homepage-capture", { timestamp: new Date().toISOString() });
+
   return (
     <Section className="pt-18 sm:pt-40.75 min-h-screen">
       <Hero />
