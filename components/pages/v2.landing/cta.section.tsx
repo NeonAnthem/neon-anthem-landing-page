@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { CTAButton } from "@/components/ui/cta.button";
 import { Section } from "@/components/ui/section";
-import { IconArrowRight, IconArrowUpRight } from "@tabler/icons-react";
+import { IconArrowUpRight } from "@tabler/icons-react";
 import Image from "next/image";
 
 export default function CTASection() {
@@ -19,12 +20,13 @@ export default function CTASection() {
           {/* End Watermark */}
 
           {/* Content */}
-          <div className="py-47.75 space-y-6">
+          <div className="max-sm:py-24 sm:py-47.75 space-y-6">
             {/* Text */}
             <div className="space-y-1.75">
               <p>No Commitment. No Pitch</p>
               <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl xl:w-[80%] xl:mx-auto font-medium">
-                Your page is losing customers right now.
+                Your page is losing{" "}
+                <span className="capitalize">customers</span> right now.
               </h2>
               <p className="text-sm sm:text-base">
                 We&apos;ll tell you exactly where - and why - in 48 hours.
@@ -37,19 +39,17 @@ export default function CTASection() {
             <div className="space-y-">
               {/* Primary CTA */}
               <div className="py-4.75 space-y-2">
-                <Button className={"rounded-full"}>
-                  Get A Free Structural Audit
-                  <IconArrowRight />
-                </Button>
-                <p>30 seconds to request. 48 hours to deliver.</p>
+                <CTAButton className={"text-lg"}>
+                  Get a Free Structural Audit
+                </CTAButton>
+                <p className="font-medium text-sm">
+                  30 seconds to request. 48 hours to deliver.
+                </p>
               </div>
               {/* End Primary CTA */}
 
               <div>
-                <Button
-                  variant={"outline"}
-                  className={"border-foreground rounded-full"}
-                >
+                <Button variant={"outline"} className={"border-foreground"}>
                   Prefer to talk first? Book a call <IconArrowUpRight />
                 </Button>
               </div>

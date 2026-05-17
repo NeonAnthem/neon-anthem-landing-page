@@ -28,6 +28,7 @@ export default function ProcessSection() {
         <div className="" data-block="contain">
           <SectionTitle
             variant={"editorial"}
+            headline="Process"
             title="5 Steps. One outcome:<br>A page that converts"
             description="No guesswork. No scope creep.<br>Every Step has a defined output.<br>A structured path from research to revenue."
           />

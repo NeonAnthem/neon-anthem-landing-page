@@ -13,13 +13,13 @@ const isProd = isProduction();
 
 export default function HeroV2() {
   if (isProd) {
+    posthog.capture("homepage-capture", {
+      timestamp: new Date().toISOString(),
+    });
   }
-  posthog.capture("homepage-capture", {
-    timestamp: new Date().toISOString(),
-  });
 
   return (
-    <Section className="pt-18 sm:pt-40.75 min-h-screen">
+    <Section className="pt-18 sm:pt-40.75">
       <Hero />
       <ClientMarqueeComponent />
       <HeroMetrics />
@@ -42,21 +42,26 @@ function Hero() {
         {/* End tagline */}
 
         {/* Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-4xl lg:text-6xl xl:text-7xl font-medium text-foreground font-heading">
-          We Engineer<br></br> High-Converting<br></br> Landing Pages.
+        <h1 className="text-3xl sm:text-5xl md:text-3xl lg:text-5xl xl:text-6xl font-medium text-foreground">
+          {/* We Engineer<br></br> High-Converting<br></br> Landing Pages. */}
+          {/* We Engineer High<br></br>Converting-Funnels<br></br>for B2B Lead Gen. */}
+          We Engineer B2B Lead Gen Systems so you stop paying for every click.
         </h1>
         {/* end Heading */}
 
         {/* Sub heading */}
-        <p className="text-sm sm:text-base mt-2 text-foreground">
-          Your Ad-Spend is working. Your Landing Page isn&apos;t. We fix that.
+        <p className="text-sm sm:text-base mt-2 text-foreground font-medium">
+          Your Ad-Spend is working. Turn that off and you&apos;re invisible. We
+          fix that.
         </p>
         {/* End sub heading */}
 
         {/* CTA */}
-        <div className="mt-4 sm:mt-17.5 w-max">
+        <div className="max-sm:mt-8 sm:mt-17.5 w-max">
           <Button className={"rounded-none"}>
-            Get our Free Structural Audit <IconArrowRight />
+            {/* Get a Free Structural Audit */}
+            Get us to Find your Leaky Funnel
+            <IconArrowRight />
           </Button>
         </div>
         {/* End CTA */}
@@ -66,11 +71,12 @@ function Hero() {
       {/* Image area */}
       <div>
         <Image
-          src="/assets/showcase/the-mark-media-landing-page-demo.png"
+          src="/assets/mocks/lead-gen-hero.webp"
           alt="Neon Anthem's client website hero section showcase"
           width={1000}
           height={1000}
-          className="max-w-181.25 max-h-104.75 w-full h-fit lg:h-full object-cover"
+          quality={100}
+          className="max-w-181.25 max-h-104.75 w-full h-fit lg:h-full object-cover object-top border rounded-2xl"
         />
       </div>
       {/* End Image area */}
@@ -169,7 +175,7 @@ const metricList: {
 
 function HeroMetrics() {
   return (
-    <div className="w-full mt-29.5" data-block="contain">
+    <div className="w-full mt-29.5 hidden sm:block" data-block="contain">
       {/* Desktop */}
       <div className="hidden sm:flex items-center justify-start gap-12 mt-10">
         {/* Conversion design */}

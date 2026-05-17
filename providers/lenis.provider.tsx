@@ -20,7 +20,7 @@ export default function LenisProvider({ children }: PropsWithChildren) {
   return (
     <ReactLenis
       root
-      options={{ autoRaf: false, autoResize: true }}
+      options={{ autoRaf: false, autoResize: true, smoothWheel: true }}
       ref={lenisRef}
     >
       {children}

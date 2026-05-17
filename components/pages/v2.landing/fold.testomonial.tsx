@@ -21,7 +21,7 @@ function TestomonialSection() {
 
 function TestomonialCard() {
   return (
-    <div className="border flex flex-col sm:flex-row items-center gap-6 p-4 sm:p-10 md:p-12 lg:14 xl:p-17.25 relative overflow-hidden z-10">
+    <div className="border flex flex-col sm:flex-row items-center gap-6 p-4 sm:p-10 md:p-12 lg:p-14 xl:p-17.25 relative overflow-hidden z-10">
       {/* Back */}
       <div className="absolute top-1/2 -translate-1/2 -right-1/6 opacity-5 -z-10 hidden xl:block">
         <TestLogoMark className="size-80" />

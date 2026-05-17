@@ -32,7 +32,11 @@ export default function SectionTitle({
       data-block="contain"
     >
       <div className="text-start">
-        <p className={cn("text-sm md:text-[1rem] text-foreground")}>
+        <p
+          className={cn(
+            "text-sm md:text-[1rem] text-foreground uppercase font-medium",
+          )}
+        >
           {headline}
         </p>
         <h2
@@ -50,7 +54,7 @@ export default function SectionTitle({
         <div
           className={cn("text-foreground", {
             hidden: variant === "default",
-            "text-start": variant === "editorial",
+            "text-start max-sm:text-sm mt-4": variant === "editorial",
           })}
         >
           <p dangerouslySetInnerHTML={{ __html: description }} />

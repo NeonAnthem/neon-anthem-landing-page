@@ -9,6 +9,10 @@ export default function ConversionSolutionsCard({
   return (
     <div className="border rounded-md p-4 sm:p-6 py-12 overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2">
+        {/* Mobile  */}
+        <div className="md:hidden block border-b pb-6">{children}</div>
+        {/* End Mobile */}
+
         {/* Content */}
         <div>
           {/* Header */}
@@ -39,7 +43,7 @@ export default function ConversionSolutionsCard({
         {/* End Content */}
 
         {/* Images */}
-        <div className="">{children}</div>
+        <div className="hidden md:block">{children}</div>
         {/* End Images */}
       </div>
     </div>

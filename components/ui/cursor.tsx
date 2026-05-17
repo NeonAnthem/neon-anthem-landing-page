@@ -13,8 +13,7 @@ export function Cursor() {
 
   useEffect(() => {
     const style = document.createElement("style");
-    style.textContent =
-      "*, *::before, *::after { cursor: none !important; }";
+    style.textContent = "*, *::before, *::after { cursor: none !important; }";
     document.head.appendChild(style);
     return () => {
       document.head.removeChild(style);
@@ -44,7 +43,7 @@ export function Cursor() {
   return (
     <motion.div
       data-cursor
-      className="fixed top-0 left-0 size-4 rounded-full bg-white mix-blend-difference pointer-events-none z-9999"
+      className="fixed top-0 left-0 size-4 rounded-full bg-white mix-blend-difference pointer-events-none z-9999 max-sm:hidden"
       style={{ x, y, translateX: "-50%", translateY: "-50%" }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ opacity: { duration: 0.15 } }}
