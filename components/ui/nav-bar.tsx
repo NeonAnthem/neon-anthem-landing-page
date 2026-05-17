@@ -5,6 +5,7 @@ import { sortByPosition } from "@/lib/positioner";
 import { cn } from "@/lib/utils";
 import { useNavbarStore } from "@/store/navbar-store";
 import { INavbarContent, INavbarContentList } from "@/types/navbar.type";
+import { IconMenu2 } from "@tabler/icons-react";
 import { useLenis } from "lenis/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -37,13 +38,26 @@ export default function NavigationBar() {
           <NeonAnthemLogo className="max-sm:h-5! h-6! fill-black dark:fill-white" />
         </NavBrand>
 
-        <NavGroup className="hidden sm:flex gap-2">
+        <NavGroup>
           <Navigation />
-          <NavGroup className="gap-2">
-            <CTAButton className="gap-4 font-body font-medium text-base">
-              Talk to Us
-            </CTAButton>
-          </NavGroup>
+
+          <div className="flex gap-2">
+            <NavGroup className="gap-2">
+              <CTAButton className="gap-4 font-body font-medium max-sm:text-sm text-base">
+                Talk to Us
+              </CTAButton>
+            </NavGroup>
+
+            {/* Mobile Nav */}
+            <Button
+              size={"icon-sm"}
+              className={"rounded-none md:hidden"}
+              variant={"ghost"}
+            >
+              <IconMenu2 />
+            </Button>
+            {/* End Mobile Nav */}
+          </div>
         </NavGroup>
       </NavBar>
     </Nav>
@@ -87,65 +101,70 @@ function Navigation() {
   }, []);
 
   return (
-    <NavContent>
-      <NavigationMenu
-        className={""}
-        sideOffset={0}
-        positionerClassName="!left-0 !w-screen !max-w-none duration-0!"
-        popupClassName="!rounded-none !shadow-none !ring-0 duration-0!"
-      >
-        <NavigationMenuList>
-          {orderedNavMenus?.map((item) => {
-            if (item?.child) {
+    <div className="hidden sm:flex gap-2">
+      <NavContent>
+        <NavigationMenu
+          className={""}
+          sideOffset={0}
+          positionerClassName="!left-0 !w-screen !max-w-none duration-0!"
+          popupClassName="!rounded-none !shadow-none !ring-0 duration-0!"
+        >
+          <NavigationMenuList>
+            {orderedNavMenus?.map((item) => {
+              if (item?.child) {
+                return (
+                  <NavigationMenuItem
+                    className={"font-heading"}
+                    key={item.label}
+                  >
+                    <NavigationMenuTrigger
+                      className={
+                        "data-popup-open:hover:bg-transparent data-open:bg-transparent"
+                      }
+                    >
+                      {item.label}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent
+                      className={
+                        "w-screen bg-black h-[50vh] duration-0! border-b border-b-border-foreground"
+                      }
+                    >
+                      <NavOpenEffect />
+                      <div className="grid grid-rows-3 grid-cols-1 h-full w-full sm:grid-cols-3 sm:grid-rows-1 *:w-full *:h-full border-t border-foreground py-4 px-4 *:px-2 divide-x divide-[#2d2d2d] text-background">
+                        {sortByPosition(item.child)?.map((child, index) => (
+                          <NavbarItemContentBlock
+                            {...child}
+                            key={item.id + index}
+                          />
+                        ))}
+                      </div>
+                      {/*  */}
+
+                      {/*  */}
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                );
+              }
+
               return (
-                <NavigationMenuItem className={"font-heading"} key={item.label}>
-                  <NavigationMenuTrigger
+                <NavigationMenuItem
+                  key={item.label}
+                  className={"text-navbar-item"}
+                >
+                  <NavigationMenuLink
                     className={
-                      "data-popup-open:hover:bg-transparent data-open:bg-transparent"
+                      "bg-transparent hover:bg-transparent hover:underline hover:underline-offset-2"
                     }
                   >
                     {item.label}
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent
-                    className={
-                      "w-screen bg-black h-[50vh] duration-0! border-b border-b-border-foreground"
-                    }
-                  >
-                    <NavOpenEffect />
-                    <div className="grid grid-rows-3 grid-cols-1 h-full w-full sm:grid-cols-3 sm:grid-rows-1 *:w-full *:h-full border-t border-foreground py-4 px-4 *:px-2 divide-x divide-[#2d2d2d] text-background">
-                      {sortByPosition(item.child)?.map((child, index) => (
-                        <NavbarItemContentBlock
-                          {...child}
-                          key={item.id + index}
-                        />
-                      ))}
-                    </div>
-                    {/*  */}
-
-                    {/*  */}
-                  </NavigationMenuContent>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               );
-            }
-
-            return (
-              <NavigationMenuItem
-                key={item.label}
-                className={"text-navbar-item"}
-              >
-                <NavigationMenuLink
-                  className={
-                    "bg-transparent hover:bg-transparent hover:underline hover:underline-offset-2"
-                  }
-                >
-                  {item.label}
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            );
-          })}
-        </NavigationMenuList>
-      </NavigationMenu>
-    </NavContent>
+            })}
+          </NavigationMenuList>
+        </NavigationMenu>
+      </NavContent>
+    </div>
   );
 }
 

@@ -19,7 +19,7 @@ export default function HeroV2() {
   }
 
   return (
-    <Section className="pt-18 sm:pt-40.75 min-h-screen">
+    <Section className="pt-18 sm:pt-40.75">
       <Hero />
       <ClientMarqueeComponent />
       <HeroMetrics />
@@ -175,7 +175,7 @@ const metricList: {
 
 function HeroMetrics() {
   return (
-    <div className="w-full mt-29.5" data-block="contain">
+    <div className="w-full mt-29.5 hidden sm:block" data-block="contain">
       {/* Desktop */}
       <div className="hidden sm:flex items-center justify-start gap-12 mt-10">
         {/* Conversion design */}
