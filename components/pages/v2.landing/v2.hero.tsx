@@ -13,10 +13,10 @@ const isProd = isProduction();
 
 export default function HeroV2() {
   if (isProd) {
-    posthog.capture("homepage-capture", {
-      timestamp: new Date().toISOString(),
-    });
   }
+  posthog.capture("homepage-capture", {
+    timestamp: new Date().toISOString(),
+  });
 
   return (
     <Section className="pt-18 sm:pt-40.75 min-h-screen">
